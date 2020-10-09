@@ -3,13 +3,25 @@
     </head>
 
     <body>
-        <form name="form" id="formId" style="display: none;">
+        <form name="form" id="formId" style="display: none;" onsubmit="return false">
             <input name="title" id="titleId" placeholder="Insert title">Title</input></br>
             <textarea name="content" id="contentId" placeholder="Write some content"></textarea></br>
-            <button type="submit" name="button" id="buttonId">Post</button>
+            <button name="button" id="buttonId">Post</button>
         </form>
 
         <button name="createPostBtn" id="createPostBtnId">CREATE POST</button>
 
+        <script>
+            var btn = document.getElementById('createPostBtnId');
+            
+            btn.addEventListener('click', function(){
+                var form=document.getElementById('formId');
+                if (formId.style.display === 'none'){
+                    formId.style.display = 'block';
+                } else {
+                    formId.style.display = 'none';
+                };
+            });
+        </script>
     </body>
 </html>
