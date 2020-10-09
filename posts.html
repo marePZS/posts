@@ -8,18 +8,35 @@
             <textarea name="content" id="contentId" placeholder="Write some content"></textarea></br>
             <button name="button" id="buttonId">Post</button>
         </form>
+        <div id="divId"></div>
 
         <button name="createPostBtn" id="createPostBtnId">CREATE POST</button>
 
         <script>
             var btn = document.getElementById('createPostBtnId');
-            
             btn.addEventListener('click', function(){
                 var form=document.getElementById('formId');
                 if (formId.style.display === 'none'){
                     formId.style.display = 'block';
                 } else {
                     formId.style.display = 'none';
+                };
+            });
+
+            var formBtn = document.getElementById('buttonId');
+            formBtn.addEventListener('click', function(){
+                var title = document.getElementById('titleId');
+                var content = document.getElementById('contentId');
+                var div = document.getElementById('divId');
+                if (title.value === "" & content.value === ""){
+                    alert('Title and Content fields are required.');
+                } else {
+                    var postTitle = document.createElement('h3');
+                    postTitle.innerText = title.value;
+                    div.appendChild(postTitle);
+                    var postContent = document.createElement('p');
+                    postContent.innerText = content.value;
+                    div.appendChild(postContent);
                 };
             });
         </script>
